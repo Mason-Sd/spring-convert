@@ -2,6 +2,9 @@ package hello.typeconverter.controller;
 
 import hello.typeconverter.type.IpPort;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,7 +32,9 @@ public class ConverterController {
         model.addAttribute("ipPort", ipPort);
         return "converter-view";
     }
-    @Data
+    @Getter
+    @Setter
+    @RequiredArgsConstructor
     static class Form {
         private IpPort ipPort;
         public Form(IpPort ipPort) {
